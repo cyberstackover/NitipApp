@@ -1,0 +1,299 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Flat Profile App A Mobile App Flat Bootstrap Responsive Website Template | Single :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Flat Profile App Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android  Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<meta charset utf="8">
+       <!--font-awsome-css-->
+<link rel="stylesheet" href="css/font-awesome.min.css"> 
+		<!--bootstrap-->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<!--custom css-->
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<!--component-css-->
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/Session.js" type="text/javascript" ></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+		var id;
+    	$(function () {
+    	var parameters = location.search.substring(1).split("&");
+    	var temp = parameters[0].split("=");
+	    id = unescape(temp[1]);
+	    // document.getElementById("idmem").value = id;
+		    $.ajax({ //Process the form using $.ajax()
+	            type      : 'GET', //Method type
+	            url       : 'http://herwintika.id/nitip/api/mlistitem.php?id='+id, //Your form processing file URL
+	            // dataType  : 'json',
+	            success   : function(data) {
+	            	// alert('test');
+	            	console.log(data);
+	            
+	            document.getElementById("itemList").innerHTML = data;
+	            }             
+	        });
+	        $.ajax({ //Process the form using $.ajax()
+	            type      : 'GET', //Method type
+	            url       : 'http://herwintika.id/nitip/api/member.php?id='+id, //Your form processing file URL
+	            // dataType  : 'json',
+	            success   : function(member) {
+	            	// alert('test');
+	            	var userdata = JSON.parse(member);
+                	console.log(userdata);
+
+	            	var Datam = userdata['Data_Member']['Detail'];
+	            	var Namam = userdata['Data_Member']['NamaUser'];
+                	var imgsrc = userdata['Data_Member']['Src'];
+	            
+	            	document.getElementById("pofileMember").innerHTML = Datam;
+	            	document.getElementById("profImg").src = imgsrc;
+	            	document.getElementById("NamaUser").innerHTML = Namam;
+	            }             
+	        });
+        });
+    	function coba(){
+    		// alert('test reg');
+    		var location = document.getElementById("location").value;
+		    var destination = document.getElementById("destination").value;
+		    var dateb = document.getElementById("dateback").value; 
+		    if (location != '' && destination != '' && dateb ) {
+	    		$.ajax({
+			            url: 'http://herwintika.id/nitip/api/mtrip.php?loc='+location+'&des='+destination+'&tgl='+dateb+'&id=1',
+			            type: 'GET',
+			            success: function (data) {
+			            	console.log(data);
+			            alert('Registrasi Anda Berhasil');
+
+			            }
+			    });
+	    	} else {
+	    		alert('Mohon untuk melengkapi data terlebih dahulu');
+	    		if (location == '') {
+	    			document.getElementById("location").focus();
+	    		} else if (destination == ''){
+	    			document.getElementById("destination").focus();
+	    		} else if (dateb == ''){
+	    			document.getElementById("dateback").focus();
+	    		} 
+	    	}
+		    
+		}
+		function posttrip(){
+    		location.href = "trip.html?id="+id;  
+		}
+		function cekitemku(){
+    		location.href = "listitem.html?id="+id+"&data=self";  
+		}
+		function cekallitem(){
+    		location.href = "listitem.html?id="+id+"&data=all";  
+		}
+
+		function reqitem(){
+    		location.href = "search.html?id="+id;  
+		}
+    </script>
+			 <!--script-->
+<script src="js/bigSlide.js"></script>
+    <script>
+		$(document).ready(function() {
+		$('.menu-link').bigSlide();
+	});
+    </script>
+            <!--script-->
+<script src="js/responsiveslides.min.js"></script>
+	 <script>
+		$(function () {
+		  $("#slider").responsiveSlides({
+			auto: true,
+			nav: true,
+			speed: 500,
+			namespace: "callbacks",
+			pager: true,
+		  });
+		});
+	  </script>
+		<!--script-->
+		<script src="js/pie-chart.js" type="text/javascript"></script>
+ <script type="text/javascript">
+
+        $(document).ready(function () {
+           
+			 $('#demo-pie-1').pieChart({
+                barColor: '#68b828',
+                trackColor: '#E4E2E2',
+                lineCap: 'butt',
+                lineWidth: 10,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+            $('#demo-pie-2').pieChart({
+                barColor: '#5bc0de',
+                trackColor: '#E4E2E2',
+                lineCap: 'butt',
+                lineWidth: 10,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+            $('#demo-pie-3').pieChart({
+                barColor: '#d9534f',
+                trackColor: '#E4E2E2',
+                lineCap: 'square',
+                lineWidth: 10,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+           
+        });
+
+    </script>
+<link href='//fonts.googleapis.com/css?family=Josefin+Sans:400,700italic,700,600italic,400italic,600,300italic,300,100italic,100' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="body-back">
+		<div class="masthead pdng-stn1">
+			<div id="menu" class="panel" role="navigation">
+				<div class="wrap-content">
+					<!-- <div class="search">
+						<form>
+							<input type="search" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}" required="">
+							<input type="submit" value=" ">
+						</form>
+					</div> --> 
+					<div class="profile-menu text-center">
+						<img class="img-circle border-effect" id="profImg" src="" alt="" style="background-color: white;">
+							<div id="NamaUser">
+								<!-- <h3>Nama User</h3> -->
+							</div>
+							<!-- <h3>Nama User</h3> -->
+								<!-- <h4><a href="#">Admin</a></h4> -->
+							<div class="social-icon">
+							<ul>
+								<li><a onclick="posttrip()" class="twitter">Post a Trip</a></li>
+								<li><a onclick="reqitem()" class="twitter">Request Item</a></li>
+								<li><a onclick="cekitemku()" class="twitter">My Items</a></li>
+								<li><a onclick="cekallitem()" class="twitter">List all Item</a></li>
+							</ul>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div class="phone-box wrap push">
+				<div class="menu-notify">
+					<div class="profile-left">
+						<a href="#menu" class="menu-link"><i class="fa fa-chevron-left"></i></a>
+					</div>
+					<div class="Profile-mid">
+						<h5 class="pro-link">Profile</h5>
+					</div>
+					<div class="Profile-right">
+						<div id="dd1" class="wrapper-dropdown-1" tabindex="1"><i class="fa fa-gear"></i>
+							<ul class="dropdown">
+								<li><a href="index.html">Log Out</a></li>
+							</ul>
+								<script type="text/javascript">
+															function DropDown(el) {
+																this.dd = el;
+																this.initEvents();
+															}
+															DropDown.prototype = {
+																initEvents : function() {
+																	var obj = this;
+												
+																	obj.dd.on('click', function(event){
+																		$(this).toggleClass('active');
+																		event.stopPropagation();
+																	});	
+																}
+															}
+															$(function() {
+												
+																var dd = new DropDown( $('#dd1') );
+												
+																$(document).click(function() {
+																	// all dropdowns
+																	$('.wrapper-dropdown-1').removeClass('active');
+																});
+												
+															});
+								</script>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="detalis-grids">			
+					<div class="details-grid">
+					</div>
+					<div class="details-shade">
+						<div id="pofileMember" >
+							<!-- <div class="details-img">
+								<img class="img-circle border-effect1" src="images/pic3.png" alt=" " />
+							</div>
+							<h3>User Name</h3>
+							<span>Id Number : 10</span>
+							<p>Nama User, Email</p> -->	
+						</div>
+						<div class="profile-content">
+								<form>
+								<input type="button" onclick="posttrip()" value="Post  a Trip!">
+								<input type="button" onclick="reqitem()" value="Request Item!">
+								<input type="button" onclick="cekitemku()" value="My Items">
+								<input type="button" onclick="cekallitem()" value="List all Item">
+								</form>	
+						</div>
+<!-- 
+						<a onclick="posttrip()" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true" style="font-size: 12px;width: 100px;background-color: #00aeed;color: aliceblue;padding: 10px;border-radius: 5px;margin-top: 5px;margin-bottom:20px;">Post  a Trip! </a>
+						<a onclick="reqitem()" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile" style="font-size: 12px;width: 100px;background-color: #00aeed;color: aliceblue;padding: 10px;border-radius: 5px;margin-top: 5px;margin-bottom:20px;margin-left: 2px;">Request Item!</a>
+						<br>
+						<a onclick="posttrip()" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true" style="font-size: 12px;width: 100px;background-color: #00aeed;color: aliceblue;padding: 10px;border-radius: 5px;margin-top: 5px;">Itemku </a>
+						<a onclick="reqitem()" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile" style="font-size: 12px;width: 100px;background-color: #00aeed;color: aliceblue;padding: 10px;border-radius: 5px;margin-top: 5px;margin-left: 2px;">List all Item</a> -->
+					</div>
+					<div class="follow" style="margin-bottom: 10px; padding-bottom: 10px;" align="center">
+						<ul id="myTab" class="nav nav-tabs left-tab" role="tablist">
+						<li role="presentation"></li>
+						<li role="presentation"></li>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="detalis-grids">			
+					
+					<!-- <div class="posts-grids">
+						<h2>Request Item List : </h2>
+						<div id="itemList"></div>
+							<div class="post-grid1">
+								<div class="post-pic">
+								    <img src="images/n1.jpg" class="img-responsive" alt="">
+								</div>
+								<div class="post-pic-text">
+									<a href="#">Gordon Flash</a>
+									<h3>Harga</h3>
+										<p>In the Ame-Comi Universe, Harley is very muchNeque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur.</p>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+<script src="js/jquery.nicescroll.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>

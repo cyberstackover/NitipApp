@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<script type="text/javascript">
+	// var idmlogin;
+	// $(document).on('ready', function() {
+ //       alert();
+ //    });
+ //    $(function () {
+ //    	alert('Hey Brooo');
+ //        // $('.tanggal').datepicker({
+ //        //     dateFormat: 'dd-mm-yy'
+ //        $('#idmem').text(loadPageVar('id'));
+ //        // });
+ //        idmlogin = loadPageVar('id');
+ //        document.getElementById("dateback").value = Date();
+ //        // document.getElementById("idmem").value = idmlogin;
+ //        // alert(idmlogin);
+	// });
+</script>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  		<link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC:400italic,700italic&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+		<link href="css/mobilemenu.css" rel="stylesheet">
+		  <link href="css/font-awesome.min.css" rel="stylesheet">
+		  <link href="css/simple-line-icons.css" rel="stylesheet">
+		  <link href="css/foundation.min.css" rel="stylesheet">
+		  <link href="css/jquery.fancybox.css" rel="stylesheet">
+		  <link href="css/style.min.css" rel="stylesheet">
+		<link href="css/less/colors/blue.min.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+		  <script src="js/lib/modernizr.js"></script>
+		  <script src="js/jquery.min.js"></script>
+		  <script src="https://maps.googleapis.com/maps/api/js"></script>
+		  <script data-main="js/script.js" src="js/lib/require.js"></script>
+        
+        <!-- main forms css -->
+        <link rel="stylesheet" href="css/forms.css" />
+       
+    </head>
+    <body>
+	    
+	<div class="container">
+	    
+	    
+		    <h1>Detail Request</h1>
+		    <div id="DetailRequest">
+			    <!-- <div class="container">
+				  <p id="idmem">Item Name</p>            
+				  <img src="http://herwintika.id/nitip/userfiles/profile-pic/default.jpg" class="img-thumbnail" alt=""  width="200" height="200"> 
+				</div>
+			    <label id="idmem">Pemesan Kota</label><br>
+			    <span>Harga</span><br>
+			    <span>Keterangan:</span><br>
+			    <span>Keterangan</span></label> -->
+		    </div>
+		    
+
+  </div>
+
+	<script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/Session.js" type="text/javascript" ></script>
+
+    <script type="text/javascript">
+    var id;
+    	$(function () {
+    	var parameters = location.search.substring(1).split("&");
+    	var temp = parameters[0].split("=");
+	    id = unescape(temp[1]);
+	    // document.getElementById("idmem").value = id;
+	    $.ajax({ //Process the form using $.ajax()
+            type      : 'GET', //Method type
+            url       : 'http://herwintika.id/nitip/api/detailreq.php?id='+id, //Your form processing file URL
+            // dataType  : 'json',
+            success   : function(data) {
+            	// alert('test');
+            	console.log(data);
+            
+            // text = text + "<li><div class='partners-item'><a href='#'><img id='imagitem' src='userfiles/item-pic/canon-9801982152.jpg' alt=''/><span class='caption'>Rp. 100.K</span></a></div></li>";  
+            document.getElementById("DetailRequest").innerHTML = data;
+            // document.getElementById("myImg").src = 'http://herwintika.id/nitip/userfiles/item-pic/'+userdata['Data_Request'][0]['Detail_Request'][0]['itemPic'];
+            }             
+        });
+    });
+    	
+    </script>
+	
+    </body>
+</html>

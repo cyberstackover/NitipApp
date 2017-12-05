@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src *  'unsafe-inline'; script-src *  'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+       <!-- <link rel="stylesheet" type="text/css" href="css/animate.css">-->
+        <link rel="stylesheet" type="text/css" href="cc/anima.css">
+
+        <link rel="stylesheet" type="text/css" href="fontA/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="fontA/css/font-awesome.min.css">
+    <!--     <script type="text/javascript" charset="utf-8" src="cordova.js"></script> -->
+        <script type="text/javascript" charset="utf-8">
+            function exitApps() {
+                navigator.app.exitApp();
+                // sessionStorage.destroy();
+            }
+        </script>
+        
+      <script src="js/loader.js"></script>
+         
+       
+        <style>
+
+
+            * {
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+            *:before, *:after {
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+            [class*="fontawesome-"]:before {
+            }
+            .textimg{
+                font-size: 11px;
+                font-family: "Open Sans";
+                /* font-weight: bold; */
+                color: #504b4d;
+            }
+            .texthead{
+                font-family: "Open Sans";
+                font-size: 9px;
+            }
+
+            a {
+                color: #df0023;
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            input {
+                border: none;
+                font-family: 'Open Sans';
+                font-size: 14px;
+                line-height: 1.5em;
+                padding: 0;
+                -webkit-appearance: none;
+            }
+
+            p {
+                line-height: 1.5em;
+            }
+
+            .clearfix {
+                *zoom: 1;
+            }
+            .clearfix:before, .clearfix:after {
+                content: ' ';
+                display: table;
+            }
+            .clearfix:after {
+                clear: both;
+            }
+
+            .container {
+                left: 50%;
+                position: fixed;
+                display: block;
+                top: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+
+            /* ---------- LOGIN ---------- */
+            .fa-2x {
+                font-size: 17px;
+            }
+            #login {
+                width: 258px;
+                margin-top: 157px; 
+            }
+
+            #login form span {
+                /*background-color: #363b41;
+                border-radius: 3px 0px 0px 3px;*/
+                color: inherit;
+                display: block;
+                float: left;
+                height: 42px;
+                line-height: 50px;
+                text-align: center;
+                width: 50px;
+                background-color: rgba(255, 255, 255, 0);
+                /*background-color: #fff;*/ 
+                /*border: 1px solid #E5E6E7;*/
+                border-radius: 41px 0px 0px 41px;
+            }
+
+            #login form input {
+                height: 42px;
+            }
+
+            #login form input[type="text"], input[type="password"] {
+                background-color: rgba(255, 255, 255, 0);
+                /*border-radius: 0px 41px 41px 0px;*/
+                color: #606468;
+                margin-bottom: 5px;
+                padding: 0 16px;
+                width: 205px;
+                border-bottom: 2px solid #e5e6e7;
+                /*border: 1px solid #e5e6e7;*/
+                /* border: 0.5px solid rgba(204, 204, 204, 0.64); */
+                transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+            }
+
+            #login form input[type="button"] {
+                border-radius: 41px;
+                -moz-border-radius: 41px;
+                -webkit-border-radius: 41px;
+                background-color: #2ecc71;
+                color: #eee;
+                font-weight: bold;
+                margin-bottom: 2em;
+                text-transform: uppercase;
+                width: 258px;
+            }
+
+            #login form input[type="button"]:hover {
+                background-color: #27ae60;
+                webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+            }
+
+            #login > p {
+                text-align: center;
+            }
+
+            #login > p span {
+                padding-left: 5px;
+            }
+            .login form input:focus {
+                border-color: #1ab394 !important;
+            }
+            :focus {
+                /*outline: -webkit-focus-ring-color auto 5px;
+                border-radius:0px;
+                border-bottom: 2px solid red;*/
+                outline: none;
+                box-shadow: -1px 3px 0px -1px #1abc9c, 1px 4px 0px -1px #1abc9c;
+            }
+            .logico{
+                    padding: 14px 7px 7px 11px;
+                display: block;
+                color: rgb(154, 154, 154);
+                        }
+                        .ey{
+                            /*float: right;*/
+                position: absolute;
+                /*margin-left: 225px;
+                margin-top: -32px;
+                font-size: 15px;
+                color: #c7c7c7;*/
+                color: #c7c7c7;
+                margin-top: 12px;
+            }
+            
+        
+        </style>
+        <style>
+            div.box {
+                margin: 20px;
+                padding: 15px;
+                background-color: lightgrey;
+            }
+            #demo-password {
+                margin: 5px;
+                position: relative;
+            }
+            .invalid {
+                outline-color: red;
+                -webkit-animation: shake .6s linear;
+            }
+            /* also keyframes and -moz-keyframes */
+            @-webkit-keyframes shake {
+                0% {
+                    left:-10px;
+                }
+                16% {
+                    left:9px;
+                }
+                33% {
+                    left:-6px;
+                }
+                50% {
+                    left:5px;
+                }
+                66% {
+                    left:-2px;
+                }
+                83% {
+                    left:1px;
+                }
+                100% {
+                    left: 0px;
+                }
+            }
+        </style>
+        <title>Home</title>
+    </head>
+    <body>
+        <div class="app">
+            
+            <div id="deviceready">
+                <div id="content" class="animated">
+                    <div class="wrapper" style="overflow:hidden;">  <img class="bg-home" src="img/home.png"/>
+                    <div style="    position: absolute; top: 0px;margin: 0 auto;left: 0; right: 0; width: 100%;">
+                    <img class="img-responsive" src="img/pater.png" style="width: 100%;position: inherit;">
+                    </div>
+                        <div class="link-home" style="top:5%">
+                        	<br><br><br><br>
+                        <img class="logo-home animated fadeIn img-responsive" style="position: initial;  width: 50%; margin: auto;display: -webkit-box;" src="img/nitip_logo.png"/>
+                            
+                            <div class="container">
+                                <div id="login" class="animated fadeInUp">
+                               
+                                       <center> </span>
+                                  <br><br>
+                                     <form method="post" action="">
+								        <div>
+								         
+								          <label for="usrnm" class="ui-hidden-accessible"></label>
+								          <input type="text" name="user" id="usrnm" placeholder="Username">
+								          <label for="pswd" class="ui-hidden-accessible"></label>
+								          <input type="password" name="passw" id="pswd" placeholder="Password">
+								         
+								          <input type="checkbox" name="login" id="log" value="1" data-mini="true">
+								          <input type="button" onclick="coba()" data-inline="true" value="Log in">
+								        </div>
+								      </form>
+
+								      </center>
+                                    <p>Not a member? <a href="register.html" style="color: #1abc9c;">Register Now!</a><span class="fontawesome-arrow-right"></span></p>
+                                <p align="center" style="color: #939393;">&nbsp;&nbsp;Version : V.1.0.7 &nbsp;&nbsp;<br><span id='version'></span></p>
+                                    
+                                </div>
+                                <div align="center" class="animated fadeIn" style=" margin-top:37px;margin-bottom: 0px;"> 
+                                
+                            </div>
+                               
+                            </div>
+                            
+                        </div>
+                        <div class="spacer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/Session.js" type="text/javascript" ></script>
+
+<script type="text/javascript">
+  function coba(){
+    var user = document.getElementById("usrnm").value;
+    var pass = document.getElementById("pswd").value;           
+    $.ajax({
+            url: 'http://herwintika.id/nitip/api/API_Login.php?user='+user+'&pass='+pass,
+            type: 'GET',
+            success: function (data) {
+                var userdata = JSON.parse(data);
+                console.log(userdata);
+
+                console.log(userdata['Login_Status']);
+                console.log(userdata['Login_Status'][0]['Status']);
+                console.log(userdata['Login_Status'][0]['Id_Member']);
+
+                var LogStatus = userdata['Login_Status'][0]['Status'];
+                var Idmember = userdata['Login_Status'][0]['Id_Member'];
+
+                if (LogStatus == 'Success') {
+                    alert('Anda Berhasil Login');
+                    location.href = "member.html?id="+ Idmember;
+                } else {
+                    alert('Login Gagal ... Username atau Password Salah');
+                    document.getElementById("usrnm").value = '';
+                    document.getElementById("pswd").value = '';
+                }
+
+            }
+    });
+  }
+</script>
+
+             <script type="text/javascript" src="js/cordova.js"></script>                                                                                                                                      
+         <script type="text/javascript" src="js/check.js"></script>
+       
+    <script src="js/slick.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+   $(document).on('ready', function() {
+            $('.single-item').slick();
+            $('.multiple-items').slick({
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 4
+                });
+            $(".regular").slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        arrows:true,
+         centerMode: true
+        // variableWidth: true
+      });
+            });
+        </script>
+        </body>
+     <script src="js/jquery-3.1.1.min.js"></script>
+          <script type="text/javascript">
+                                        
+<!--    $('ver').innerHTML = AppVersion.build;alert(AppVersion.build);-->
+        var backButtonPressed = false, intval = setInterval(function (){backButtonPressed = false;}, 1000);;
+        document.addEventListener("backbutton", function (e){
+            e.preventDefault();
+            if (backButtonPressed) {
+                clearInterval(intval) 
+                (navigator.app && navigator.app.exitApp()) || (device && device.exitApp())
+            }
+            else {
+                window.plugins.toast.showShortBottom('Press again to exit', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+                backButtonPressed = true;
+                // history.back(1);
+            } 
+        }, false);
+            $(function(){
+         var intervalTime = 3600000;
+            var myTimer;
+                myTimer = setInterval(function() { 
+                    console.log('interval ');
+                     // alert('log');
+                                        
+                navigator.app.exitApp();
+                 sessionStorage.destroy();
+            
+                                        },intervalTime);
+            
+              $('body').bind('touchstart',function() {
+                    console.log('touchstart');
+                    clearInterval(myTimer);
+                });
+         
+                $('body').bind('touchend', function() {
+                    console.log('touchend');
+                     myTimer = setInterval(function() { 
+                                        // alert('log');
+                     console.log('interval ');
+                                         navigator.app.exitApp();
+                                        sessionStorage.destroy();
+                                        },intervalTime);
+                });
+
+$("#inputPassword").on("keyup",function(){
+    if($(this).val())
+        $(".fa-eye").show();
+    else
+        $(".fa-eye").hide();
+    });
+$(".fa-eye").mousedown(function(){
+                $("#inputPassword").attr('type','text');
+            }).mouseup(function(){
+                $("#inputPassword").attr('type','text');
+            }).mouseout(function(){
+                $("#inputPassword").attr('type','password');
+            });
+
+            });
+
+           
+
+
+        </script>
+</html>

@@ -1,0 +1,213 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Flat Profile App A Mobile App Flat Bootstrap Responsive Website Template | Single :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Flat Profile App Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android  Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<meta charset utf="8">
+       <!--font-awsome-css-->
+<link rel="stylesheet" href="css/font-awesome.min.css"> 
+		<!--bootstrap-->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<!--custom css-->
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<!--component-css-->
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/Session.js" type="text/javascript" ></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+   	var id;
+   	var idm;
+	$(function () {
+	var parameters = location.search.substring(1).split("&");
+	var temp = parameters[0].split("=");
+    id = unescape(temp[1]);
+ 	temp = parameters[1].split("=");
+    idm = unescape(temp[1]);
+    // document.getElementById("idmem").value = id;
+    if (idm == 'self') {
+		$.ajax({ //Process the form using $.ajax()
+		            type      : 'GET', //Method type
+		            url       : 'http://herwintika.id/nitip/api/mlistitem.php?id='+id+'&data=self', //Your form processing file URL
+		            // dataType  : 'json',
+		            success   : function(data) {
+		            	// alert('test');
+		            	console.log(data);
+		            
+		             
+		            document.getElementById("itemList").innerHTML = data;
+		            }             
+		        });
+    } else {
+    	$.ajax({ //Process the form using $.ajax()
+		            type      : 'GET', //Method type
+		            url       : 'http://herwintika.id/nitip/api/mlistitem.php?id='+id+'&data=all', //Your form processing file URL
+		            // dataType  : 'json',
+		            success   : function(data) {
+		            	// alert('test');
+		            	console.log(data);
+		            
+		             
+		            document.getElementById("itemList").innerHTML = data;
+		            }             
+		        });
+    }
+	    
+        // $.ajax({ //Process the form using $.ajax()
+        //     type      : 'GET', //Method type
+        //     url       : 'http://herwintika.id/nitip/api/member.php?id='+id, //Your form processing file URL
+        //     // dataType  : 'json',
+        //     success   : function(member) {
+        //     	// alert('test');
+        //     	var userdata = JSON.parse(member);
+        //     	console.log(userdata);
+
+        //     	var Datam = userdata['Data_Member']['Detail'];
+        //     	var Namam = userdata['Data_Member']['NamaUser'];
+        //     	var imgsrc = userdata['Data_Member']['Src'];
+            
+        //     	document.getElementById("pofileMember").innerHTML = Datam;
+        //     	document.getElementById("profImg").src = imgsrc;
+        //     	document.getElementById("NamaUser").innerHTML = Namam;
+        //     }             
+        // });
+    });
+	function backm() {
+   		location.href = "member.html?id="+id;
+    }
+
+</script>
+			 <!--script-->
+<script src="js/bigSlide.js"></script>
+    <script>
+		$(document).ready(function() {
+		$('.menu-link').bigSlide();
+	});
+    </script>
+            <!--script-->
+<script src="js/responsiveslides.min.js"></script>
+	 <script>
+		$(function () {
+		  $("#slider").responsiveSlides({
+			auto: true,
+			nav: true,
+			speed: 500,
+			namespace: "callbacks",
+			pager: true,
+		  });
+		});
+	  </script>
+		<!--script-->
+		<script src="js/pie-chart.js" type="text/javascript"></script>
+ <script type="text/javascript">
+
+        $(document).ready(function () {
+           
+			 $('#demo-pie-1').pieChart({
+                barColor: '#68b828',
+                trackColor: '#E4E2E2',
+                lineCap: 'butt',
+                lineWidth: 10,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+            $('#demo-pie-2').pieChart({
+                barColor: '#5bc0de',
+                trackColor: '#E4E2E2',
+                lineCap: 'butt',
+                lineWidth: 10,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+            $('#demo-pie-3').pieChart({
+                barColor: '#d9534f',
+                trackColor: '#E4E2E2',
+                lineCap: 'square',
+                lineWidth: 10,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+           
+        });
+
+    </script>
+<link href='//fonts.googleapis.com/css?family=Josefin+Sans:400,700italic,700,600italic,400italic,600,300italic,300,100italic,100' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="body-back" style="min-height: 568px; ">
+		<div class="">
+			<div class="phone-box wrap push">
+				<div class="menu-notify">
+					<div class="profile-left">
+						<a onclick="backm()"><i class="fa fa-chevron-left"></i></a>
+					</div>
+					<div class="Profile-mid">
+						<h5 class="pro-link">List Item</h5>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div id="myTabContent" class="tab-content">
+				<!-- <div class="detalis-grids">	 -->
+				<div class="container">
+				<div class="detalis-grids">			
+					<div class="posts-grids">
+						<h2>Request Item List : </h2>
+						<div id="itemList"></div>
+							<!-- <div class="post-grid1">
+								<div class="post-pic">
+								    <img src="images/n1.jpg" class="img-responsive" alt="">
+								</div>
+								<div class="post-pic-text">
+									<a href="#">Gordon Flash</a>
+									<h3>Harga</h3>
+										<p>In the Ame-Comi Universe, Harley is very muchNeque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur.</p>
+								</div>
+								<div class="clearfix"></div>
+							</div> -->
+
+					</div>
+				</div>
+				<!-- <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+					<div class="profile-content">
+						<form>
+							<div>
+							<h4>Your Location</h4>	
+							<input type="text" id="location" placeholder="Jakarta, Indonesia" required="">
+							</div>
+							<div class="email">
+							<h4>Trip Destination</h4>	
+							<input type="text" id="destination" placeholder="Kuala Lumpur, Malaysia" required="">
+							</div>
+							<div>
+							<h4>Date back to Home</h4>	
+							<input type="date" id="dateback" required="">
+							<input type="button" onclick="coba()" value="Save">
+							</div>
+						</form>	
+					</div>
+				</div>	 -->
+				</div>	
+				</div>
+				
+			</div>
+		</div>
+	</div>
+<script src="js/jquery.nicescroll.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>

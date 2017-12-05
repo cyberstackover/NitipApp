@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<script type="text/javascript">
+	// var idmlogin;
+	// $(document).on('ready', function() {
+ //       alert();
+ //    });
+ //    $(function () {
+ //    	alert('Hey Brooo');
+ //        // $('.tanggal').datepicker({
+ //        //     dateFormat: 'dd-mm-yy'
+ //        $('#idmem').text(loadPageVar('id'));
+ //        // });
+ //        idmlogin = loadPageVar('id');
+ //        document.getElementById("dateback").value = Date();
+ //        // document.getElementById("idmem").value = idmlogin;
+ //        // alert(idmlogin);
+	// });
+</script>
+<style type="text/css">
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 600px;
+    background-color: #f1f1f1;
+}
+
+li {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color on hover */
+li:hover {
+    background-color: #fcf5e3;
+    color: white;
+    border: solid;
+}
+	#wrapper {
+    height: 250px;
+    width: 100%;
+    overflow: auto;
+}
+</style>
+</style>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <!-- main forms css -->
+        <link rel="stylesheet" href="css/forms.css" />
+       
+    </head>
+    <body>
+	<form method="post" id="createRequestForm" action="http://herwintika.id/nitip/api/request-item.php" enctype="multipart/form-data">   
+    <div class="form-group" >
+            <label>Id Member</label>
+            <input class="form-control" id="memberID" name="memberID" maxlength="50" placeholder="What do you want to buy?" readonly>
+    </div> 
+	<div class="form-group" >
+            <label>Trip Id</label>
+            <input class="form-control" id="tripId" name="tripId" maxlength="50" placeholder="What do you want to buy?" readonly>
+    </div>
+    <div class="col-xs-12 col-sm-6" id="section1">
+        <br>
+        <h4>Item <span class="subtext">
+        <!-- <i class="fa fa-chevron-circle-right"></i> -->
+        </span></h4><br>
+        <div class="form-group">
+            <label>Item name</label>
+            <input class="form-control" id="itemName" name="itemName" maxlength="50" placeholder="What do you want to buy?" required>
+        </div>
+        <div class="form-group">
+            <label>Item description</label>
+            <textarea class="form-control" rows="5" style="resize:none" id="itemDescription" name="itemDescription" maxlength="500"
+            placeholder="Describe your item e.g. size, quantity, colour, packaging, how to buy" required>
+            </textarea>
+        </div>
+        <div class="form-group">
+            <label>Category</label>
+            <select class="form-control" id="category" name="category" required>
+                <option value="" disabled selected>Select from list</option>
+                <option value="nice">nice</option>
+            </select>
+        </div>
+
+        <input type="hidden" name="parentRequestId" value="0"><input type="hidden" name="parentRecommendationId" value="0">                     
+        
+        <!-- <div class="form-group">
+                <label>Upload a picture</label>             
+                <input type="file" name="file" id="file">
+        </div> -->
+
+        <div class="form-group float-label-control">
+            <label for="">Upload Picture</label>
+            <center><input name="ImageFile"  class="btn btn-primary ladda-button" data-style="zoom-in"  type="file" required></center>
+        </div>        
+
+        <div class="form-group">
+            <label>URL</label>
+            <input class="form-control" id="url" name="url" placeholder="(Optional)">
+        </div>
+        
+    </div>
+    <div class="col-xs-12 col-sm-6" id="section2" >
+        <br>
+        <h4><span class="subtext">Location <span class="subtext">
+        <!-- <i class="fa fa-chevron-circle-right"> -->
+        </span></h4><br>
+        <div id="locationField" class="form-group">
+            <label>City to buy from</label>
+            <input name='citybuy' class="form-control" id="searchTextField" type="text" size="50" placeholder="E.g. London, England" autocomplete="on">
+        </div>
+        
+        <div id="locationField" class="form-group">
+            <label>Transaction Location </label>
+            <input name="citytrans" class="form-control" id="searchTextField1" type="text" size="50" placeholder="E.g. Jakarta, Indonesia" autocomplete="on">
+        </div>
+    
+    </div>
+
+    <div class="col-xs-12 col-sm-6" id="section3">
+        <br>
+        <h4>Transaction Price</h4><br>
+        <table class="table borderless">
+            <tr>
+                <td style="vertical-align:middle;width:155px">
+                
+                    <div class="hidden-xs">
+                        <label>Price you are willing to pay: 
+                        <!-- <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" data-html="true"></i> -->
+                        </label>
+                    </div>
+                </td>
+                <td style="width:45px">
+                    <input class="form-control" id="itemName" name="paid" maxlength="50" placeholder="1.000.000" required>
+                </td>
+            </tr>
+
+        </table>
+        <br>
+        <div class="submit">           
+            <center>
+                <button class="btn btn-primary ladda-button" data-style="zoom-in" type="submit"  id="SubmitButton" value="Upload" />Request</button>
+            </center>
+        </div>
+    </form>
+	<script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/Session.js" type="text/javascript" ></script>
+
+    <script type="text/javascript">
+    var id;
+    var idm;
+    $(function () {
+        var parameters = location.search.substring(1).split("&");
+        var temp = parameters[0].split("=");
+        id = unescape(temp[1]);
+        temp = parameters[1].split("=");
+        idm = unescape(temp[1]);
+        // document.getElementById("idmem").value = id;
+        // $('.tanggal').datepicker({
+        //     dateFormat: 'dd-mm-yy'
+        // });
+        document.getElementById("tripId").value = id;
+        document.getElementById("memberID").value = idm;
+    });
+    </script>
+	
+    </body>
+</html>
